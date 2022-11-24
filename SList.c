@@ -10,18 +10,24 @@ void SLtPrint(SLT* phead)
 	}
 }
 
-void SLtPushBack(SLT* phead, SLTDataType x)
+void SLtPushBack(SLT** pphead, SLTDataType x)
 {
 	//	找尾节点
-	SLT* newcode = (SLT*)malloc(sizeof(SLTDataType));
-	newcode->data = x;
-	newcode->next = NULL;
+	SLT* newnode = (SLT*)malloc(sizeof(SLTDataType));
+	newnode->data = x;
+	newnode->next = NULL; 
 
-	SLT* tail = phead;
-	while (tail->next != NULL)
+	if (*pphead == NULL)
 	{
-		tail = tail->next;
+		*pphead = newnode;	// 解引用
 	}
-
-	tail->next = newcode;
+	else
+	{
+		SLT* tail = *pphead;
+		while (tail->next != NULL)
+		{
+			tail = tail->next;
+		}
+		tail->next = newnode;
+	}
 }

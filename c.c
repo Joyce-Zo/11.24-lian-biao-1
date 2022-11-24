@@ -15,10 +15,10 @@
 void test1()
 {
 	SLT* plist = NULL;
-	SLtPushBack(plist, 1);
-	SLtPushBack(plist, 2);
-	SLtPushBack(plist, 3);
-	SLtPushBack(plist, 4);
+	SLtPushBack(&plist, 1);
+	SLtPushBack(&plist, 2);
+	SLtPushBack(&plist, 3);
+	SLtPushBack(&plist, 4);
 
 	SLtPrint(plist);
 }

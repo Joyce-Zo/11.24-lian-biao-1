@@ -12,4 +12,4 @@ typedef struct SListNode
 }SLT;
 
 void SLtPrint(SLT*phead);
-void SLtPushBack(SLT* phead, SLTDataType x);
+void SLtPushBack(SLT** pphead, SLTDataType x);
